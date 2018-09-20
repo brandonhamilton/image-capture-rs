@@ -1,0 +1,18 @@
+[package]
+name = "image-capture"
+version = "0.1.0"
+description = "Image acquisition from Scanners and Cameras"
+authors = ["Brandon Hamilton <brandon.hamilton@gmail.com>"]
+homepage = "https://github.com/brandonhamilton/image-capture-rs"
+repository = "https://github.com/brandonhamilton/image-capture-rs"
+license = "MIT"
+readme = "README.md"
+keywords = ["image acquisition", "image capture", "scanner", "camera"]
+
+[dependencies]
+
+[target.'cfg(windows)'.dependencies]
+winapi = { git = "https://github.com/brandonhamilton/winapi-rs", branch = "wia", features = ["combaseapi", "fileapi", "objbase", "oleauto", "wia", "winerror"] }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+image-capture-core = "0.1.2"
